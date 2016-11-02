@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/youmu_ckl/!svn/ver/782/trunk/code/src/main/webapp/WEB-INF/views/commons
+END
+head.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/youmu_ckl/!svn/ver/782/trunk/code/src/main/webapp/WEB-INF/views/commons/head.jsp
+END
+head_amazeui.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/youmu_ckl/!svn/ver/50/trunk/code/src/main/webapp/WEB-INF/views/commons/head_amazeui.jsp
+END
+head_easyui.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/youmu_ckl/!svn/ver/60/trunk/code/src/main/webapp/WEB-INF/views/commons/head_easyui.jsp
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/youmu_ckl/!svn/ver/37/trunk/code/src/main/webapp/easyui
+END
+license_freeware.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/license_freeware.txt
+END
+easyloader.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/easyloader.js
+END
+changelog.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/changelog.txt
+END
+jquery.easyui.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/jquery.easyui.min.js
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/readme.txt
+END
+jquery.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/jquery.min.js
+END
+jquery.easyui.mobile.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/youmu_ckl/!svn/ver/12/trunk/code/src/main/webapp/easyui/jquery.easyui.mobile.js
+END

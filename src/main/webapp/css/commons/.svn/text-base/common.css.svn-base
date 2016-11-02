@@ -1,0 +1,23 @@
+
+@CHARSET "UTF-8";
+*{
+	margin:0px;
+	padding:0px;
+	font-family:'Microsoft Yahei',"simsun";
+}
+
+.orderTable tr td{
+	margin:10px;
+	padding:10px;
+}
+
+.orderTable th{
+	margin:20px;
+	padding:20px;
+	font-size:20px;
+}
+
+/* 单元格数据显示缺省 */
+.datagrid-cell
+{padding:6px 4px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}  
+
