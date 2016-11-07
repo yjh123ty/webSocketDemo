@@ -20,10 +20,10 @@ import org.slf4j.LoggerFactory;
 
 public class PrintMessageUtil {
 
-    private static String partner      = "4054";                                        //用户id
-    private static String machine_code = "4004508883";                                  //打印机终端号
-    private static String apiKey       = "c6b3f1492006b22439342ba0d0a9c2fd8a0de8ad";    //API密钥
-    private static String mKey         = "i7yprdhe26tr";                                //打印机密钥
+    private static String partner      = "6234";                                        //用户id
+    private static String machine_code = "4004515184";                                  //打印机终端号 ...
+    private static String apiKey       = "3cfc88dc9c6d4b216b8742ab29d131641cf963cc";    //API密钥
+    private static String mKey         = "vi8wfq2cyxmu";                                //打印机密钥 ...
     private static Logger log          = LoggerFactory.getLogger(PrintMessageUtil.class);
 
     public static void main(String[] args) {
@@ -299,8 +299,7 @@ public class PrintMessageUtil {
             query.append(param.getValue());
         }
         query.append(mKey);
-        String encryptStr = query.toString();
-//        String encryptStr = MD5.MD5Encode(query.toString()).toUpperCase();
+        String encryptStr = MD5.MD5Encode(query.toString()).toUpperCase();
         return encryptStr;
     }
 }
