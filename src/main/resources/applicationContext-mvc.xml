@@ -19,11 +19,7 @@
 	
 	
 	<!-- controller组件扫描 -->
-	<context:component-scan base-package="org.xdemo.example.websocket.controller">
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Service" />
+	<context:component-scan base-package="org.xdemo.example.websocket.**.controller">
 	</context:component-scan>
 	
 	<bean class="org.xdemo.example.websocket.swagger.config.SwaggerConfig"></bean>
