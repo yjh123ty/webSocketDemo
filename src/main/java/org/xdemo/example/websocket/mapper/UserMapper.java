@@ -18,7 +18,7 @@ import org.xdemo.example.websocket.entity.User;
  * <p>Date:2016年11月1日下午3:04:33</p>
  * <p>Description:TODO</p>
  */
-public interface UserMapper {
+public interface UserMapper extends BaseMapper<User>{
     public void update(User user);
     
     public User getById(Long id);

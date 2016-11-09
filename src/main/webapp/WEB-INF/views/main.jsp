@@ -72,21 +72,21 @@
 			<div id="sidebar" class="span3">
 				<ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
 					<li>
-						<a href="index.jsp">
+						<a href="${ctx}/main/index.do">
 							<i class="icon-chevron-right"></i>
 							主页
 						</a>
 					</li>
 					<li>
-						<a href="calendar.html">
+						<a href="${ctx}/workflow/processDefinition.do">
 							<i class="icon-chevron-right"></i>
-							Calendar
+							流程管理
 						</a>
 					</li>
 					<li>
-						<a href="tables.html">
+						<a href="${ctx}/datatable/index.do">
 						<i class="icon-chevron-right"></i>
-						Tables
+							Tables
 						</a>
 					</li>
 				</ul>
@@ -102,7 +102,7 @@
 						<div class="navbar-inner">
 							<ul class="breadcrumb">
 								<li>
-									<a href="#">主页</a>
+									<a href="${ctx}/main/index.do">主页</a>
 									<span class="divider">/</span>
 								</li>
 							</ul>
@@ -113,42 +113,12 @@
 				<div class="row-fluid">
 					<div class="block">
 						<div class="navbar navbar-inner block-header">
-							<div class="muted pull-left">Table样式</div>
+							<div class="muted pull-left">我的工作</div>
 						</div>
 						
 						<div class="block-content collapse in">
 							<div class="span12">
-								<div class="table-toolbar">
-									<div class="btn-group">
-										<a href="#">
-											<button class="btn btn-success">
-													添加
-												<i class="icon-plus icon-white"></i>
-											</button>
-										</a>
-									</div>
-									
-									<div class="btn-group pull-right">
-										<button class="btn dropdown-toggle" data-toggle="dropdown">Tools
-											<span class="caret"></span>
-										</button>
-												<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-													<li>
-														<a href="#">导出数据</a>
-													</li>
-													<li>
-														<a href="#">模板下载</a>
-													</li>
-													<li>
-														<a href="#">导入数据</a>
-													</li>
-												</ul>
-									</div>
-								</div>
-								
-								
-								
-								
+								2016-11-11 xxxxxx
 							</div>
 						</div>
 					</div>

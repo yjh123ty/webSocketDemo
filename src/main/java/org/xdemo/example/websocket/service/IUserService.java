@@ -18,7 +18,7 @@ import org.xdemo.example.websocket.entity.User;
  * <p>Date:2016年11月1日下午3:15:30</p>
  * <p>Description:TODO</p>
  */
-public interface IUserService {
+public interface IUserService extends IBaseService<User>{
     public void update(User user);
     
     public User getById(Long id);

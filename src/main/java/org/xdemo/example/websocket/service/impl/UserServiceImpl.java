@@ -22,10 +22,22 @@ import org.xdemo.example.websocket.service.IUserService;
  * <p>Description:TODO</p>
  */
 @Service
-public class UserServiceImpl implements IUserService{
+public class UserServiceImpl extends BaseServiceImpl<User> implements IUserService{
     
-    @Autowired
     private UserMapper userMapper;
+    
+    /**
+     *  <p>Author:yjh;</p>
+     *  <p>Date:2016年11月9日下午5:58:36;</p>
+     *	<p>Description: TODO;</p>
+     *  @param TODO 
+     *  @throws	TODO
+     */
+    @Autowired
+    public UserServiceImpl(UserMapper userMapper) {
+        super(userMapper);
+        this.userMapper = userMapper;
+    }
 
     /* (non-Javadoc)
      * @see org.xdemo.example.websocket.service.IUserService#update(org.activiti.engine.identity.User)
