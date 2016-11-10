@@ -54,7 +54,7 @@
 					<li><a href="${ctx}/main/index.do"> <i
 							class="icon-chevron-right"></i> 主页
 					</a></li>
-					<li><a href="${ctx}/workflow/processDefinition.do"> <i
+					<li><a href="${ctx}/workflow/index.do"> <i
 							class="icon-chevron-right"></i> 流程管理
 					</a></li>
 					<li><a href="${ctx}/datatable/index.do"> <i

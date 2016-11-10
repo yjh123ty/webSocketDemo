@@ -9,12 +9,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.xdemo.example.websocket.entity.AjaxResult;
+import org.xdemo.example.websocket.query.PageList;
 import org.xdemo.example.websocket.service.IWorkFlowService;
 
 /**
@@ -34,9 +37,9 @@ public class WorkFlowController {
      * 工作流页面导向
      * @return
      */
-    @RequestMapping("/processDefinition.do")
+    @RequestMapping("/index.do")
     public String processDefinition(){
-        return "workflow/processDefinition";
+        return "workflow/processDef";
     }
     
     /**
@@ -48,15 +51,24 @@ public class WorkFlowController {
     @RequestMapping("/newDeploy.do")
     @ResponseBody
     public AjaxResult newDeploy(String processName, MultipartFile processFile){
-        
+        AjaxResult result = new AjaxResult();
         try {
-            // 部署流程
-            workflowService.newDeploy(processName, processFile.getInputStream());
-            return new AjaxResult(true,"流程部署成功！！");
+            if(StringUtils.isBlank(processName)){
+                result = AjaxResult.fail("请输入流程名称！");
+            }
+            else if(processFile == null){
+                result = AjaxResult.fail("未上传部署文件！");
+            }
+            else{
+                // 部署流程
+                workflowService.newDeploy(processName, processFile.getInputStream());
+                result = AjaxResult.success("流程部署成功！");
+            }
         } catch (IOException e) {
             e.printStackTrace();
-            return new AjaxResult(false,"流程部署失败！！");
+            result = AjaxResult.fail("流程部署失败！");
         }
+        return result;
     }
     
     /**
@@ -65,8 +77,8 @@ public class WorkFlowController {
      */
     @RequestMapping("/listProcessDefinition.do")
     @ResponseBody
-    public List<Map<String,Object>> listProcessDefinition(){
-        List<Map<String,Object>> list = workflowService.listProcessDefinition();
+    public PageList<Map<String,Object>> listProcessDefinition(){
+        PageList<Map<String,Object>> list = workflowService.listProcessDefinition();
         return list;
     }
     
@@ -85,5 +97,9 @@ public class WorkFlowController {
             return new AjaxResult(false,"删除流程失败！");
         }
     }
+    
+//    public ResponseEntity<T> showImg(){
+//        
+//    }
    
 }

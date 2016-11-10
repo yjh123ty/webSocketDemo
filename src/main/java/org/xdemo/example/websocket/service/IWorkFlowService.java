@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
+import org.xdemo.example.websocket.query.PageList;
+
 /**
  * <p>Title:IWorkFlowService</p>
  * @author yjh
@@ -28,7 +30,7 @@ public interface IWorkFlowService {
      * 流程规则数据展示
      * @return
      */
-    List<Map<String,Object>> listProcessDefinition();
+    PageList<Map<String,Object>> listProcessDefinition();
 
     /**
      * 根据流程的key启动流程

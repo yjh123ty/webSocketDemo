@@ -19,6 +19,7 @@ import org.activiti.engine.repository.DeploymentBuilder;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.xdemo.example.websocket.query.PageList;
 import org.xdemo.example.websocket.service.IWorkFlowService;
 import org.xdemo.example.websocket.utils.CommUtil;
 
@@ -64,7 +65,7 @@ public class WorkFlowServiceImpl implements IWorkFlowService{
      * @see org.xdemo.example.websocket.service.IWorkFlowService#listProcessDefinition()
      */
     @Override
-    public List<Map<String, Object>> listProcessDefinition() {
+    public PageList<Map<String, Object>> listProcessDefinition() {
         // 声明
         List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
         // 做封装
@@ -78,8 +79,14 @@ public class WorkFlowServiceImpl implements IWorkFlowService{
             Map<String, Object> map = CommUtil.obj2map(pd, new String[]{"id","name","key","version","description","deploymentId","resourceName","diagramResourceName"});
             list.add(map);
         }
+        //统计已部署流程定义的数量
+        long count = repositoryService.createProcessDefinitionQuery().count();
+        // 封装分页对象
+        PageList<Map<String, Object>> pageList = new PageList<>();
+        pageList.setRows(list);
+        pageList.setTotal(count);
         // 返回
-        return list;
+        return pageList;
     }
 
     /* (non-Javadoc)
@@ -114,8 +121,7 @@ public class WorkFlowServiceImpl implements IWorkFlowService{
      */
     @Override
     public void deleteProcessDefinition(String processId) {
-        // TODO Auto-generated method stub
-        
+        repositoryService.deleteDeployment(processId,true);
     }
 
     
