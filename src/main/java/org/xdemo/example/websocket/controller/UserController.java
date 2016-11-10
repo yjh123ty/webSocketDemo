@@ -8,8 +8,10 @@ package org.xdemo.example.websocket.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.xdemo.example.websocket.entity.AjaxResult;
 import org.xdemo.example.websocket.entity.User;
+import org.xdemo.example.websocket.query.BaseQuery;
 import org.xdemo.example.websocket.query.PageList;
 import org.xdemo.example.websocket.service.IUserService;
 
@@ -30,6 +32,12 @@ public class UserController {
     @RequestMapping("/index.do")
     public String index(){
         return "user/user";
+    }
+    
+    @RequestMapping("/list.do")
+    @ResponseBody
+    public PageList<User> list(BaseQuery baseQuery){
+        return userService.getPageList(baseQuery);
     }
     
 }
