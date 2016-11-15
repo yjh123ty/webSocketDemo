@@ -11,7 +11,6 @@
 <body>
 	<!-- top引入 -->	
 	<%@ include file="/WEB-INF/views/commons/top.jsp"%>
-	
 	<!-- 正文 -->
 	<div class="container-fluid">
 		<div class="row-fluid">
@@ -67,6 +66,7 @@
 	</div>
 	
 <script type="text/javascript">
+		
 	
 </script>
 </body>

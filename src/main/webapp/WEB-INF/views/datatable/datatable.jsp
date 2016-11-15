@@ -4,70 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Tables</title>
+<title>数据表格</title>
 <%@ include file="/WEB-INF/views/commons/head.jsp"%>
 <%@ include file="/WEB-INF/views/commons/head_bootstrap.jsp"%>
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a class="brand" href="#">用户面板</a>
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-						<li class="dropdown"><a class="dropdown-toggle" href="#"
-							role="button" data-toggle="dropdown"> <i class="icon-user"></i>
-								abby yu <i class="caret"></i>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a tabindex="-1" href="#">Profile</a></li>
-								<li class="divider"></li>
-								<li><a tabindex="-1" href="login.html">Logout</a></li>
-							</ul></li>
-					</ul>
-
-					<ul class="nav">
-						<li class="dropdown"><a class="dropdown-toggle" href="#"
-							data-toggle="dropdown"> Settings <b class="caret"></b>
-						</a>
-							<ul id="menu1" class="dropdown-menu">
-								<li><a href="#"> Tools <i class="icon-arrow-right"></i>
-								</a></li>
-								<li><a href="#">Other Link</a></li>
-							</ul></li>
-						<li><a href="#">SEO Settings</a></li>
-					</ul>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<!-- top引入 -->	
+	<%@ include file="/WEB-INF/views/commons/top.jsp"%>
+	
 	<!-- 正文 -->
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<div id="sidebar" class="span3">
-				<ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
-					<li><a href="${ctx}/main/index.do"> <i
-							class="icon-chevron-right"></i> 主页
-					</a></li>
-					<li><a href="${ctx}/workflow/index.do"> <i
-							class="icon-chevron-right"></i> 流程管理
-					</a></li>
-					<li><a href="${ctx}/datatable/index.do"> <i
-							class="icon-chevron-right"></i> Tables
-					</a></li>
-				</ul>
-			</div>
+			<!-- sidebar start -->
+			<%@ include file="/WEB-INF/views/commons/sidebar.jsp"%>
+			<!-- sidebar end -->
+			
 			<div id="content" class="span9">
 				<div class="row-fluid">
 					<div class="navbar">
 						<div class="navbar-inner">
 							<ul class="breadcrumb">
-								<li><a href="${ctx}/datatable/index.do">Tables</a> <span
+								<li><a href="${ctx}/datatable/index.do">数据表格</a> <span
 									class="divider">/</span></li>
 							</ul>
 						</div>
@@ -106,32 +63,8 @@
 								</div>
 								<!-- table toolbar End -->
 
-								<div id="example2_wrapper" class="dataTables_wrapper form-inline" role="grid">
-<!-- 									<div class="row"> -->
-<!-- 										<div class="span6"> -->
-<!-- 											<div id="example2_length" class="dataTables_length"> -->
-<!-- 												<label> <select size="1" name="example2_length" -->
-<!-- 													aria-controls="example2"> -->
-<!-- 														<option value="10" selected="selected">10</option> -->
-<!-- 														<option value="25">25</option> -->
-<!-- 														<option value="50">50</option> -->
-<!-- 														<option value="100">100</option> -->
-<!-- 												</select> records per page -->
-<!-- 												</label> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
-
-<!-- 										<div class="span6"> -->
-<!-- 											<div id="example2_filter" class="dataTables_filter" style="text-align: right"> -->
-<!-- 												<label> Search: <input aria-controls="example2" -->
-<!-- 													type="text"> -->
-<!-- 												</label> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-									
+								<div class="dataTables_wrapper form-inline" role="grid">
 									<table id="datatable" cellspacing="0" cellpadding="0" border="0"></table>
-										
 								</div>
 							</div>
 						</div>
@@ -155,20 +88,22 @@
 		table.bootstrapTable({
 			url: _ctx + "/datatable/list.do", 
 		    dataType: "json",
+		  //是否显示行间隔色
+            striped: true,
+          //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）     
+            cache: false, 
 		  	//分页
 		    pagination: true,                  
 		    //单行选择
 		    singleSelect: true,
 		  	//服务端处理分页
 		    sidePagination: "server",
-		  	//初始化加载第一页，默认第一页
-		    pageNumber: 1,
-		  	//每页的记录行数（*）   
-            pageSize: 10,  
+			//是否启用排序  
+            sortable: true,    
+            //排序方式 
+            sortOrder: "desc",
             //可供选择的每页的行数（*）    
             pageList: [10, 25, 50, 100],
-          	//最少允许的列数
-            minimumCountColumns: 10,
           	//是否启用点击选中行
             clickToSelect: true,                
 		    columns: [
@@ -182,8 +117,8 @@
 	                      field: 'id',
 	                      align: 'center',
 	                      formatter:function(value,row,index){  
-	                   var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.id + '\')">编辑</a> ';  
-	                   var d = '<a href="#" mce_href="#" onclick="del(\''+ row.id +'\')">删除</a> ';  
+	                   var e = '<a href="#" onclick="edit(\''+ row.id + '\')">编辑</a> ';  
+	                   var d = '<a href="#" onclick="del(\''+ row.id +'\')">删除</a> ';  
 	                        return e+d;  
 	                    } 
 	                  }

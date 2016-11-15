@@ -32,45 +32,6 @@ public class PrintMessageUtil {
         StringBuffer sb = new StringBuffer("");
         sb.append("点菜清单\r");
         sb.append("----------------------\r");
-        sb.append("联系人：测试打印\r");
-        sb.append("电话：13408086368\r");
-        sb.append("用餐时间：2015-04-09 13:01-13:30\r");
-        sb.append("用餐地址：打印测试\r");
-        sb.append("----------------------\r");
-        sb.append("菜品明细\r\r");
-        sb.append("1.麻辣牛肉(1份)\r");
-        sb.append("2.极品鲜毛肚(1份)\r");
-        sb.append("3.精品千层肚(1份)\r");
-        sb.append("4.金针肥牛卷(1份)\r");
-        sb.append("5.水晶牛肉(1份)\r");
-        sb.append("6.一次性牛油红锅（中辣）(1份)\r");
-        sb.append("7.干碟(1份)\r");
-        sb.append("8.油碟(葱蒜香菜盐味精耗油醋、碗筷)(1份)\r");
-        sb.append("9.鹌鹑蛋(1份)\r");
-        sb.append("10.脆皮肠(1份)\r");
-        sb.append("11.带鱼(1份)\r");
-        sb.append("12.耗儿鱼(1份)\r");
-        sb.append("13.金针菇(1份)\r");
-        sb.append("14.豆皮(1份)\r");
-        sb.append("15.冬瓜(1份)\r");
-        sb.append("16.豆芽(1份)\r");
-        sb.append("17.脆皮香蕉(1份)\r");
-        sb.append("18.麻圆(1份)\r");
-        sb.append("19.大唯怡(1份)\r");
-        sb.append("----------------------\r");
-        sb.append("器具明细\r\r");
-        sb.append("电磁炉：1\r");
-        sb.append("锅具、汤勺、漏勺：1\r");
-        sb.append("插线板：0\r");
-        sb.append("----------------------\r");
-        sb.append("客户备注\r\r");
-        sb.append("无备注\r");
-        sb.append("----------------------\r");
-        sb.append("器具押金：170元\r");
-        sb.append("外送费用：20.00元\r");
-        sb.append("菜品金额：272元\r");
-        sb.append("应付金额：462.0元\r");
-
         System.out.println(sb.toString());
 
         try {

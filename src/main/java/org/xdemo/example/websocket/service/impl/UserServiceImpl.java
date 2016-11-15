@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.xdemo.example.websocket.app.vo.UserInfo;
 import org.xdemo.example.websocket.entity.User;
+import org.xdemo.example.websocket.exception.BizExecption;
 import org.xdemo.example.websocket.mapper.UserMapper;
 import org.xdemo.example.websocket.service.IUserService;
+import org.xdemo.example.websocket.utils.UserContext;
 
 /**
  * <p>Title:UserServiceImpl</p>
@@ -77,6 +79,24 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements IUserServi
     @Override
     public User checkLogin(String name) {
         return userMapper.checkLogin(name);
+    }
+
+    /* (non-Javadoc)
+     * @see org.xdemo.example.websocket.service.IUserService#changePassword(java.lang.String, java.lang.String)
+     */
+    @Override
+    public boolean changePassword(String oldPassword, String newPassword) {
+        User user = userMapper.getById(UserContext.getUser().getId());
+        if(user==null){
+            throw new BizExecption("系统异常！请重新登录！");
+        }
+        if(!oldPassword.equals(user.getPassword())){
+            throw new BizExecption("原密码输入错误！");
+        }
+        if(!oldPassword.equals(newPassword)){
+            throw new BizExecption("新密码与旧密码不一致！");
+        }
+        return false;
     }
 
 }

@@ -42,5 +42,15 @@ public interface IUserService extends IBaseService<User>{
      *  @return
      */
     public User checkLogin(String name);
+
+    /**
+     *  <p>Author:yjh;</p>
+     *  <p>Date:2016年11月14日下午4:59:27;</p>
+     *	<p>Description: TODO;</p>
+     *  @param oldPassword
+     *  @param newPassword
+     *  @return
+     */
+    public boolean changePassword(String oldPassword, String newPassword);
     
 }

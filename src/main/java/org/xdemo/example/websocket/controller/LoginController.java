@@ -44,9 +44,9 @@ public class LoginController {
             return AjaxResult.fail("用户名不能为空！"); 
         }
         
-        if(StringUtils.isBlank(password)){
-            return AjaxResult.fail("密码不能为空！"); 
-        }
+//        if(StringUtils.isBlank(password)){
+//            return AjaxResult.fail("密码不能为空！"); 
+//        }
         
         try{
             // 检查登录
@@ -58,7 +58,7 @@ public class LoginController {
             }
             
             // 对密码进行加密
-            password = MD5Util.MD5(password);
+//            password = MD5Util.MD5(password);
             
             //密码不正确
             if(!password.equals(user.getPassword())){

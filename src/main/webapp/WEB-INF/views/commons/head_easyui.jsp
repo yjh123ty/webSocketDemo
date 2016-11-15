@@ -11,6 +11,7 @@
 </style>
  <script type="text/javascript" src="${ctx}/easyui/jquery.easyui.min.js"></script>
  
+ 
  <!-- 国际化 -->
  <script type="text/javascript" src="${ctx}/easyui/locale/easyui-lang-zh_CN.js"></script>
  

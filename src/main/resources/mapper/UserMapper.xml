@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
   <update id="update" parameterType="long" >
-    update user
+    update `user`
     <set >
         name = #{name}
     </set>
@@ -43,6 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select
 		u.* 
 		from `user` u
+		<include refid="orderSql" />
 		<if test="pageSize>0">
 			limit #{start},#{pageSize}
 		</if>
@@ -52,6 +53,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getCountByQuery" parameterType="BaseQuery" resultType="long">
 		select count(u.id) from `user` u
 	</select>
+	
+	<!-- 排序 -->
+	<sql id="orderSql">
+		<if test="sortItem != null">
+			order by
+			<foreach collection="sortItem" item="item" separator=",">
+				${item}
+			</foreach>
+		</if>
+	</sql>
   
   
 </mapper>

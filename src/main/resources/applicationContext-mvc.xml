@@ -52,4 +52,21 @@
 		<property name="maxInMemorySize" value="#{4*1024}" />
 	</bean>
 	
+	<bean id="loginInterceptor" class="org.xdemo.example.websocket.web.interceptor.LoginInterceptor">
+		<property name="loginUrl" value="/login.jsp" />
+	</bean>
+		
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 
+				/** 一级路径和子路径
+				/*  一级路径
+			 -->
+			<mvc:mapping path="/**/*.do"/>
+			<mvc:exclude-mapping path="/login/**/*.do"/>
+			<ref bean="loginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 </beans>  
