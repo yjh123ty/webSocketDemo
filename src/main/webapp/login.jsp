@@ -27,8 +27,8 @@
 	}
   	#formbox{
 		position: absolute; 
-		top:30%; 
-		left:60%;
+		top:40%; 
+		left:50%;
 		text-align:center;
 	}
 	#login-form{

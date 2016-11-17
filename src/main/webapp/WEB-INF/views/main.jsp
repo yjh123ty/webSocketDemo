@@ -21,12 +21,6 @@
 			<!-- content start -->
 			<div id="content" class="span9">
 				<div class="row-fluid">
-					<div class="alert alert-success">
-						<button class="close" type="button" data-dismiss="alert">×</button>
-						<h4>Success</h4>
-						The operation completed successfully
-					</div>
-					
 					<!-- 面包屑 -->
 					<div class="navbar">
 						<div class="navbar-inner">
